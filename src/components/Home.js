@@ -36,14 +36,14 @@ function Home() {
             />
             <Card
                 src="https://thespaces.com/wp-content/uploads/2017/08/Courtesy-of-Airbnb.jpg"
-                title="Penthouse à Londres"
-                description="Profitez de la vue imprenable sur Londres grâce à ce superbe penthouse."
+                title="Penthouse à Nantes"
+                description="Profitez de la vue imprenable sur Nantes grâce à ce superbe penthouse."
                 price="€350/nuit"
             />
             <Card
                 src="https://media.nomadicmatt.com/2018/apartment.jpg"
-                title="1 Bedroom apartment"
-                description="Superhost with great amenities and a fabolous shopping complex nearby"
+                title="Appartement avec 1 chambre"
+                description="Superhost avec de grands équipements et un fabuleux complexe commercial à proximité."
                 price="€70/nuit"
             />
             </div>

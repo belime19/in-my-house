@@ -10,21 +10,24 @@ import { useContext } from 'react';
 import Auth from '../context/Auth';
 import { useHistory } from "react-router-dom";
 import { login } from '../services/AuthService';
+import { setItem, removeItem, getItem } from '../services/LocalStorage';
+
 
 function Login() {
 
-    const {isAuthenticated} = useContext(Auth);
+    const {isAuthenticated, setIsAuthenticated} = useContext(Auth);
     const history = useHistory();
+    const userFromLS = getItem('user');
     const [user, setUser] = useState({
-        email:'',
-        password:''
+        email:userFromLS ? userFromLS['email']:'',
+        password:userFromLS ? userFromLS['motDePass']:''
       })
       
       const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const response = await login(user);
-          console.log(response);
+          const userData = await login(user);
+          setIsAuthenticated(userData.accessToken !== undefined)
         } catch ({response}) {
           console.log(response);
           
@@ -43,6 +46,7 @@ function Login() {
         history.replace('/');
       }
     },[isAuthenticated,history])
+
   return (
     <div>
     <h2>Connexion</h2>

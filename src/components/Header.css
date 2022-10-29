@@ -70,3 +70,13 @@
   color: white;
   background-color: rgb(37, 37, 37);
 }
+
+.hote_button{
+  background-color: rgb(255, 255, 255);
+  color: rgb(40, 40, 40);
+}
+
+.hote_button:hover {
+  background-color: rgb(199, 194, 194);
+  color: rgb(40, 40, 40);
+}

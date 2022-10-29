@@ -7,19 +7,31 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import { useState } from 'react';
+import { signup } from '../services/AuthService';
+import { useHistory } from "react-router-dom";
 
 function Signup() {
 
   const [user, setUser] = useState({
-    firstName:'',
-    lastName : '',
+    prenom:'',
+    nom : '',
     email:'',
-    password:''
+    motDePass:''
   })
+  const history = useHistory();
   
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(user);
+    try {
+      const signupMessage = await signup(user);
+      if(signupMessage === 'Utilisateur enregistré avec succès !'){
+        history.replace('/login');
+      }
+    }
+    catch ({signupMessage}) {
+      console.log(signupMessage);
+      
+    }
   }
 const onChange = (e) => {
     const { name, value } = e.target;
@@ -35,11 +47,11 @@ const onChange = (e) => {
     <form  onSubmit={handleSubmit}>
         <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="firstName">Prénom</InputLabel>
-            <Input id="firstName" name="firstName" onChange={onChange} autoComplete="firstName" autoFocus />
+            <Input id="firstName" name="prenom" onChange={onChange} autoComplete="firstName" autoFocus />
         </FormControl>
         <FormControl margin="normal" fullWidth>
             <InputLabel htmlFor="lastName">Nom</InputLabel>
-            <Input id="lastName" name="lastName" onChange={onChange} autoComplete="lastName"  />
+            <Input id="lastName" name="nom" onChange={onChange} autoComplete="lastName"  />
         </FormControl>
         <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">Email</InputLabel>
@@ -47,7 +59,7 @@ const onChange = (e) => {
         </FormControl>
         <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="password">Password</InputLabel>
-            <Input id="password" type="password" onChange={onChange} name="password" autoComplete="password"  />
+            <Input id="password" type="password" onChange={onChange} name="motDePass" autoComplete="password"  />
         </FormControl>
         <Button type="submit" fullWidth variant="contained" color="primary">
             S'inscrire

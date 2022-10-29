@@ -41,6 +41,9 @@ function App() {
           
           <AuthRoute path="/search" component={SearchPage}>
           </AuthRoute>
+
+          <AuthRoute path="/add-property" component={SearchPage}>
+          </AuthRoute>
           
           <Route exact path="/">
             <Home />

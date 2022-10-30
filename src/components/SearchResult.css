@@ -25,10 +25,19 @@
     padding-left: 20px;
 }
 
-.searchResult__heart {
-    position: absolute;
-    top: 20px;
-    right: 40px;
+.reserveButton{
+    color: rgb(255, 255, 255);
+    background-color: coral;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    width: 100px;  
+    cursor: pointer;
+}
+
+.reserveButton:hover{
+    font-weight: bolder;
+   background-color: rgb(255, 17, 0);
 }
 
 .searchResult__infoTop {

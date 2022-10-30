@@ -27,7 +27,7 @@ function Login() {
         event.preventDefault();
         try {
           const userData = await login(user);
-          setIsAuthenticated(userData.accessToken !== undefined)
+          setIsAuthenticated(userData.email !== undefined)
         } catch ({response}) {
           console.log(response);
           

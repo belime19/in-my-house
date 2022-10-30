@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { hasAuthenticated } from './services/AuthService';
 import Auth from './context/Auth';
 import AuthRoute from './components/AuthRoute';
+import Reserved from './components/Reserved';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(hasAuthenticated())
@@ -40,6 +41,9 @@ function App() {
           </Route>
           
           <AuthRoute path="/search" component={SearchPage}>
+          </AuthRoute>
+
+          <AuthRoute path="/reserved" component={Reserved}>
           </AuthRoute>
 
           <AuthRoute path="/add-property" component={SearchPage}>

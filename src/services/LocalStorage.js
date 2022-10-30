@@ -3,7 +3,7 @@ export const removeItem = (item) => {
 }
 
 export const getItem = (item) => {
-    window.localStorage.getItem(item);
+   return  window.localStorage.getItem(item);
 }
 
 export const setItem = (ItemName, newItem) => {

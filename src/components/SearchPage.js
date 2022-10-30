@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './SearchPage.css';
-import { Button } from "@material-ui/core";
 import SearchResult from "./SearchResult";
 import { searchProperties } from '../services/proprieteService';
 import { getItem } from '../services/LocalStorage';
-import { Item } from '@adobe/react-spectrum';
+
 
 function SearchPage() {
     const [searchResults, setSearchResult] = useState();

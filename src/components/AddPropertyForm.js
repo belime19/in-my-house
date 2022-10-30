@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { Grid, Paper, Button, Typography, Select, TextareaAutosize } from '@material-ui/core'
-import { TextField } from '@material-ui/core'
-import { Formik, Form, Field } from 'formik'
 import { addProperty } from '../services/proprieteService'
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';

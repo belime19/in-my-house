@@ -9,7 +9,7 @@ export const hasAuthenticated = () => {
 
 export const login = (credentials) => {
     return axios
-    .post(`${process.env.IN_MY_HOUSE_BACKEND_URL}/api/utilisateurs/login`, credentials)
+    .post(`https://in-my-house-back.herokuapp.com/api/utilisateurs/login`, credentials)
     .then(response => response.data)
     .then(user => {
         setItem('userEmail',user.email);
@@ -19,7 +19,7 @@ export const login = (credentials) => {
 
 export const signup = (userData) => {
     return axios
-    .post(`${process.env.IN_MY_HOUSE_BACKEND_URL}/api/utilisateurs/signup`, userData)
+    .post(`https://in-my-house-back.herokuapp.com/api/utilisateurs/signup`, userData)
     .then(response => {console.log(response); return response.data.message});
 }
 
